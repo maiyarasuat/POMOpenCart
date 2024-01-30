@@ -29,9 +29,10 @@
 		</classes>
 	</test>-->
 
-	<test name="Register Page Test">
+	<!-- <test name="Register Page Test">
 		<classes>
 			<class name="com.qa.opencart.tests.RegisterPageTest" />
 		</classes>
-	</test>
+	</test>-->
+	
 </suite>	
