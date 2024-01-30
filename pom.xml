@@ -90,6 +90,12 @@
 			<version>1.9.21</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -117,7 +123,7 @@
 					<suiteXmlFiles>
 
 						<suiteXmlFile>
-						src/test/resources/testrunners/testng_regression.xml</suiteXmlFile>
+							src/test/resources/testrunners/testng_regression.xml</suiteXmlFile>
 						<!--suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
 
 					</suiteXmlFiles>
