@@ -16,7 +16,6 @@ import io.qameta.allure.Story;
 @Story("US: - 200: implement login page feature for opencart application")
 public class LoginPageTest extends BaseTest {
 
-	
 	@Description("login page title test")
 	@Severity(SeverityLevel.NORMAL)
 	@Test(priority = 1)
@@ -32,7 +31,7 @@ public class LoginPageTest extends BaseTest {
 		String url = loginPage.getLoginPageUrl();
 		Assert.assertTrue(url.contains(AppConstants.LOGIN_PAGE_URL_FRACTION));
 	}
-	
+
 	@Description("login page forgot password exist test")
 	@Severity(SeverityLevel.MINOR)
 	@Test(priority = 3)

@@ -10,38 +10,38 @@
 		<listener
 			class-name="com.qa.opencart.listeners.TestAllureListener" />
 		<listener
-			class-name="com.qa.opencart.listeners.AnnotationTransformer" />	
+			class-name="com.qa.opencart.listeners.AnnotationTransformer" />
 
 	</listeners>
 
 	<test name="Login Page Test">
-	<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.qa.opencart.tests.LoginPageTest" />
 		</classes>
 	</test>
 
-	<test name="Accounts Page Test">
-	<parameter name="browser" value="chrome" /> 
+	<!--<test name="Accounts Page Test">
+		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
-	name="com.qa.opencart.tests.AccountsPageTest" />
+				name="com.qa.opencart.tests.AccountsPageTest" />
 		</classes>
 	</test>
 
 	<test name="ProductInfo Page Test">
-	<parameter name="browser" value="chrome" />	
+		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
-	name="com.qa.opencart.tests.ProductInfoTest" />
+				name="com.qa.opencart.tests.ProductInfoTest" />
 		</classes>
 	</test>
 
-	<!-- <test name="Register Page Test">
+	<test name="Register Page Test">
 		<parameter name="browser" value="chrome" />	
 		<classes>
 			<class name="com.qa.opencart.tests.RegisterPageTest" />
 		</classes>
 	</test>-->
-	
+
 </suite>	

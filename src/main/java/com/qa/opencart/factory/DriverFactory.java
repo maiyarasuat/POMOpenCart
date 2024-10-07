@@ -42,7 +42,7 @@ public class DriverFactory {
 
 		String browserName = prop.getProperty("browser");
 
-		// String browserName = System.getProperty("browser");
+		//String browserName = System.getProperty("browser");
 		System.out.println("browser name is :" + browserName);
 
 		highlight = prop.getProperty("highlight");
@@ -103,7 +103,7 @@ public class DriverFactory {
 		System.out.println("running tests on GRID with browser:" + browserName);
 
 		try {
-			switch (browserName) {
+			switch (browserName.toLowerCase()) {
 			case "chrome":
 				tlDriver.set(new RemoteWebDriver(new URL(prop.getProperty("huburl")), optManager.getChromeOptions()));
 				break;
@@ -184,8 +184,7 @@ public class DriverFactory {
 
 		File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
 
-		String path = System.getProperty("user.dir") + "/screenshot" + methodName + "_" + System.currentTimeMillis()
-				+ ".png";
+		String path = System.getProperty("user.dir") + "/screenshot" + methodName + "_" + System.currentTimeMillis()+ ".png";
 		File destination = new File(path);
 
 		try {
