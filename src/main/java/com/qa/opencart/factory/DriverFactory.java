@@ -180,19 +180,39 @@ public class DriverFactory {
 		return prop;
 	}
 
-	public static String getScreenshot(String methodName) {
-
-		File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
-
-		String path = System.getProperty("user.dir") + "/screenshot" + methodName + "_" + System.currentTimeMillis()+ ".png";
-		File destination = new File(path);
-
-		try {
-			org.openqa.selenium.io.FileHandler.copy(srcFile, destination);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return path;
+//	public static String getScreenshot(String methodName) {
+//
+//		File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+//
+//		String path = System.getProperty("user.dir") + "/screenshot" + methodName + "_" + System.currentTimeMillis()+ ".png";
+//		File destination = new File(path);
+//
+//		try {
+//			org.openqa.selenium.io.FileHandler.copy(srcFile, destination);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//
+//		return path;
+//	}
+	
+	
+	public static File getScreenshotFile() {
+		
+		return ((TakesScreenshot) getDriver()).getScreenshotAs((OutputType.FILE));
+		
 	}
+	
+	public static byte[] getScreenshotbyte() {
+		
+		return ((TakesScreenshot) getDriver()).getScreenshotAs((OutputType.BYTES));
+	}
+	
+	public static String getScreenshotBase64() {
+		
+		return ((TakesScreenshot) getDriver()).getScreenshotAs((OutputType.BASE64));
+	}
+	
+	
+	
 }

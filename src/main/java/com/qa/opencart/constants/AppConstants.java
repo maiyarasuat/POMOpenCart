@@ -3,6 +3,8 @@ package com.qa.opencart.constants;
 import java.util.Arrays;
 import java.util.List;
 
+import org.openqa.selenium.chrome.ChromeOptions;
+
 public class AppConstants {
 
 	public static final String LOGIN_PAGE_TITLE = "Account Login";
@@ -23,9 +25,6 @@ public class AppConstants {
 	public static final int SHORT_TIME_OUT = 5;
 	public static final int MEDIUM_TIME_OUT = 10;
 	public static final int LONG_TIME_OUT = 15;
-	
-
-
 
 	
 	

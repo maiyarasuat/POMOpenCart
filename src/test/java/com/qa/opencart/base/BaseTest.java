@@ -3,18 +3,26 @@ package com.qa.opencart.base;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.opencart.factory.DriverFactory;
+import com.qa.opencart.listeners.TestAllureListener;
 import com.qa.opencart.pages.AccountsPage;
 import com.qa.opencart.pages.LoginPage;
 import com.qa.opencart.pages.RegisterPage;
 import com.qa.opencart.pages.SearchResultsPage;
 import com.qa.opencart.pages.productInfoPage;
 
+
+
+@Listeners({ChainTestListener.class, TestAllureListener.class})
 public class BaseTest {
 
 	protected Properties prop;
@@ -26,6 +34,8 @@ public class BaseTest {
 	protected productInfoPage prodInfoPage;
 	DriverFactory df;
 	protected SoftAssert softAssert;
+	
+	
 
 	@Parameters({"browser" , "browserversion"})
 	@BeforeTest
@@ -43,6 +53,17 @@ public class BaseTest {
 		softAssert = new SoftAssert();
 	}
 
+	@AfterMethod
+	public void attachScreenshot(ITestResult result) {
+		
+		if(!result.isSuccess()) {
+			
+			ChainTestListener.embed(DriverFactory.getScreenshotFile(), "image/png");
+		}
+		
+	}
+	
+		
 	@AfterTest
 	public void teardown() {
 		driver.quit();
